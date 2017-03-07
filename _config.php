@@ -1,0 +1,1 @@
+<?php ShortcodeParser::get('default')->register('SocialMedia', array('SocialMediaShortCodeHandler', 'parse_socialmedia'));
