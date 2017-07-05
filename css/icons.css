@@ -1,13 +1,17 @@
 @charset "utf-8";
+
 @font-face {
-  font-family: 'FontAwesome';
-  src: url('../../social-media/css/fonts/fontawesome-webfont.eot?v=4.2.0');
-  src: url('../../social-media/css/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-openfonts'), url('../../social-media/css/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../../social-media/css/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truefonts'), url('../../social-media/css/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+  font-family: 'icomoon';
+  src:  url('../../social-media/css/fonts/icomoon.eot?mfz3g5');
+  src:  url('../../social-media/css/fonts/icomoon.eot?mfz3g5#iefix') format('embedded-opentype'),
+    url('../../social-media/css/fonts/icomoon.ttf?mfz3g5') format('truetype'),
+    url('../../social-media/css/fonts/icomoon.woff?mfz3g5') format('woff'),
+    url('../../social-media/css/fonts/icomoon.svg?mfz3g5#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-.fa-icon {
+.sm-icon {
 	color:#fff;
 	line-height:35px;	
 	width:35px;
@@ -16,26 +20,17 @@
 	text-align:center;
 	position:relative;
 	transition:all 0.3s;
+  font-size:20px;
+	transition:all 0.3s;
+  font-family: 'icomoon';	
 }
-.fa-icon.auto-width {
+.sm-icon.auto-width {
 	width:auto;
 	padding-right:10px;
 	text-transform:uppercase;
 }
-.fa-icon.full-width {
-	width:100%;
-	clear:both;
-	text-align:left;
-	line-height:30px;
-	text-transform:lowercase;
-	font-weight:bold;
-}
-.fa-icon.full-width .icon {
-	position:relative;
-	top:3px;
-	margin-right:15px;
-}
-.fa-icon a {
+
+.sm-icon a {
 	text-decoration:none !important;
 }
 .circle {
@@ -45,57 +40,59 @@
 .rounded-corners {
 	border-radius:10px;
 }
-.icon:before {
-	font-family: 'FontAwesome';
-	font-size:25px;
-	line-height:30px;
-	margin-right:5px;
-	color:#54564b;
-	transition:all 0.3s;
+.sm-icon:before {
+  content:"";
+	font-family: 'icomoon';	
 }
-.fa-icon:hover .icon:before {
-	color:##78a407;
+.sm-icon:hover {
+	opacity:0.8;
 }
-.fa-facebook:before {
-	content:"\f09a";
+.icon-email:before {
+  content: "\e900";
 }
-.fa-facebook-square:before{
-	content:"\f082";
+.icon-envelope:before {
+  content: "\e901";
 }
-.fa-twitter:before {
-	content:"\f099";
+.icon-phone:before {
+  content: "\e902";
 }
-.fa-linkedin:before {
-	content:"\f0e1";
+.icon-pinterest:before {
+  content: "\e903";
 }
-.fa-pinterest:before {
-	content:"\f231";
+.icon-mobile:before {
+  content: "\e958";
 }
-.fa-instagram:before {
-	content:"\f16d";
+.icon-google:before {
+  content: "\ea88";
 }
-.fa-email:before {
-	content:"\f1fa";
+.icon-google-plus:before {
+  content: "\ea8b";
 }
-.fa-envelope:before {
-	content:"\f0e0";
+.icon-facebook:before {
+  content: "\ea90";
 }
-.fa-phone:before {
-	content:"\f095";
+.icon-instagram:before {
+  content: "\ea92";
 }
-.fa-shopping-cart:before {
-	content:"\f07a";
+.icon-twitter:before {
+  content: "\ea96";
 }
-.fa-youtube:before {
-	content:"\f167";
+.icon-youtube:before {
+  content: "\ea9d";
 }
-.Brand .fa-facebook {
+.icon-youtube2:before {
+  content: "\ea9e";
+}
+.icon-linkedin:before {
+  content: "\eaca";
+}
+.Brand .icon-facebook {
   background:#3b5998;
 }
-.Brand .fa-twitter {
+.Brand .icon-twitter {
   background:#1da1f2;
 }
-.Brand .fa-instagram {
+.Brand .icon-instagram {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#faa946+0,e76145+20,e44953+36,bf397c+61,8c39a7+83;Instagram */
 background: #faa946; /* Old browsers */
 background: -moz-radial-gradient(bottom left, ellipse cover,  #faa946 0%, #e76145 20%, #e44953 36%, #bf397c 61%, #8c39a7 83%); /* FF3.6-15 */
@@ -104,19 +101,19 @@ background: radial-gradient(ellipse at bottom left,  #faa946 0%,#e76145 20%,#e44
 
 
 }
-.Brand .fa-linkedin {
+.Brand .icon-linkedin {
   background:#0077b5;
 }
-.Brand .fa-pinterest {
+.Brand .icon-pinterest {
   background:#bd081c;
 }
-.Brand .fa-youtube {
+.Brand .icon-youtube {
   background:#cd201f;
 }
-.Brand .fa-email, .Brand .fa-envelope {
+.Brand .icon-email, .Brand .icon-envelope {
   background:#8fc400;
 }
-.Brand .fa-phone {
+.Brand .icon-phone {
   background:#227A00;
 }
 a {
