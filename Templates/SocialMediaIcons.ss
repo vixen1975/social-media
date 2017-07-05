@@ -1,5 +1,5 @@
-<a href="<% if IconClass = fa-email || IconClass = fa-envelope %>mailto:$Url<% else %>$Url<% end_if %>" target="_blank" title="Follow us on $Title" class="$ColourScheme">
-<span class="fa-icon $IconClass"></span> 
-<% if ShowTitle %>$Title<% end_if %>
+<a href="<% if IconClass = email || IconClass = envelope %>mailto:$Url<% else_if IconClass = phone || IconClass = mobile %>tel:$Url<% else %>$Url<% end_if %>" target="_blank" title="<% if IconClass = email || IconClass = envelope %>Email us<% else_if IconClass = phone || IconClass = mobile %>Call us <% else %>Follow us on $Title<% end_if %>" class="$ColourScheme">
+<span class="sm-icon icon-{$IconClass}"></span> 
+  <% if ShowTitle %><span class="sm-text">$Title</span><% end_if %>
 </a>
 
