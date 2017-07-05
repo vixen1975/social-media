@@ -1,0 +1,8 @@
+---
+Name: social-media
+After:
+  - 'mysite/*'
+---
+Page_Controller:
+  extensions:
+    - SMPage_extension
