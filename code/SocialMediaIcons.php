@@ -3,10 +3,11 @@ class SocialMediaIcon extends DataObject{
 	public static $db = array(
 		'Title' => 'Text',
 		'Url' => 'Text',
-		'IconClass' => 'Enum("fa-facebook, fa-facebook-square, fa-twitter, fa-pinterest, fa-linkedin, fa-instagram, fa-email, fa-envelope, fa-phone, fa-shopping-cart, fa-youtube")',
+		'IconClass' => 'Enum("facebook, twitter, pinterest, linkedin, instagram, google-plus, email, envelope, phone, mobile, youtube")',
     'ColourScheme' => 'Enum("Brand, Site","Brand")',
 		'SortOrder' => 'Int',
-		'ShowTitle' => 'Boolean'
+		'ShowTitle' => 'Boolean',
+    'Show' => 'Enum("Header, Footer, Both", "Both")'
 	);
 	
 	
@@ -16,16 +17,31 @@ class SocialMediaIcon extends DataObject{
 		$fields->push(new TextField('Title'));
 		$fields->push(new CheckboxField('ShowTitle', 'Show title next to icon?')); 
 		$fields->push(new TextField('Url', 'Complete URL (include http://) or Value'));		
-		$fields->push(new DropdownField('IconClass', 'Icon Type', array('fa-facebook' => 'Facebook', 'fa-facebook-square' => 'Facebook Square', 'fa-twitter' => 'Twitter', 'fa-pinterest' => 'Pinterest', 'fa-linkedin' => 'LinkedIn', 'fa-instagram' => 'Instagram', 'fa-email' => 'Email @', 'fa-envelope' => 'Email Envelope', 'fa-phone' => 'Phone', 'fa-shopping-cart' => 'Shopping Cart', 'fa-youtube' => 'YouTube')));
+		$fields->push(new DropdownField('IconClass', 'Icon Type', $this->dbObject('IconClass')->enumValues()));
     $fields->push(new DropdownField('ColourScheme', 'Colour Scheme', $this->dbObject("ColourScheme")->enumValues()));
+    $fields->push(new DropdownField('Show', 'Show in', $this->dbObject("Show")->enumValues()));
 		return $fields;
 	}
 	
 	
 	function SMIcons(){
 		return $this->renderWith('SocialMediaIcons');
-	}
-	
-	
-	
+	}	
+}
+
+class SMPage_extension extends Extension {
+  
+  public function onBeforeInit() {
+    Requirements::css("social-media/css/icons.css");
+  }
+  
+  public function SocialMediaIcons(){ 
+    $do = SocialMediaIcon::get()->sort('SortOrder'); 
+    return $do;
+  }
+  
+  public function FooterSocialMediaIcons(){ 
+    $do = SocialMediaIcon::get()->filter(array('Show' => array('Footer', 'Both')))->sort('SortOrder'); 
+    return $do;
+  }
 }
