@@ -6,3 +6,6 @@ After:
 Page_Controller:
   extensions:
     - SMPage_extension
+Page:
+  extensions:
+    - 'SocialShare'
