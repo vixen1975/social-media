@@ -13,8 +13,8 @@ class SocialShare extends DataExtension {
   *
   */
   private static $db = array(
-    'SMTitleCustom' => 'Varchar(100)',
-    'SMDescriptionCustom' => 'Varchar(150)',
+    'SMTitle' => 'Varchar(100)',
+    'SMDescription' => 'Varchar(150)',
   );
 
   private static $has_one = array(
@@ -123,7 +123,7 @@ class SocialShare extends DataExtension {
        *
        * @return string
        */
-      public function getDefaultOGTitle() {
+      public function getDefaultSMTitle() {
           return $this->owner->getTitle();
       }
       /**
@@ -157,7 +157,7 @@ class SocialShare extends DataExtension {
      * @return string
      */
       public function getSMTitle() {
-          return ($this->owner->SMTitle) ? $this->owner->SMTitle : $this->owner->getDefaultOGTitle();
+          return ($this->owner->SMTitle) ? $this->owner->SMTitle : $this->owner->getDefaultSMTitle();
       }
       /**
        * The description that will be used in the 'og:description' open graph tag.

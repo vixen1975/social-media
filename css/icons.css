@@ -13,7 +13,7 @@
 
 .sm-icon {
 	color:#fff;
-	line-height:35px;	
+	line-height:35px;
 	width:35px;
 	height:35px;
 	display:inline-block;
@@ -22,7 +22,7 @@
 	transition:all 0.3s;
   font-size:20px;
 	transition:all 0.3s;
-  font-family: 'icomoon';	
+  font-family: 'icomoon';
 }
 .sm-icon.auto-width {
 	width:auto;
@@ -42,7 +42,7 @@
 }
 .sm-icon:before {
   content:"";
-	font-family: 'icomoon';	
+	font-family: 'icomoon';
 }
 .sm-icon:hover {
 	opacity:0.8;
@@ -115,6 +115,9 @@ background: radial-gradient(ellipse at bottom left,  #faa946 0%,#e76145 20%,#e44
 }
 .Brand .icon-phone {
   background:#227A00;
+}
+.Brand .icon-google, .Brand .icon-google-plus {
+  background:#ea4335;
 }
 a {
 	text-decoration:none;
